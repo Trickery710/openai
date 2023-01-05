@@ -1,0 +1,22 @@
+import pyaudio
+import openai
+import numpy as np
+
+def process_audio():
+  # Set up the PyAudio stream
+  p = pyaudio.PyAudio()
+  stream = p.open(format=pyaudio.paInt16, channels=1, rate=16000, input=True, frames_per_buffer=1024)
+
+  # Record audio from the microphone
+  audio_data = stream.read(1024)
+
+  # Preprocess the audio data
+  audio_data = np.frombuffer(audio_data, dtype=np.int16)
+  audio_data = audio_data / 32768.0  # Normalize the audio data
+
+  # Feed the audio data to the OpenAI model
+  model_input = {'audio': audio_data}
+  model_output = openai.Completion.create(engine=model_id,
+
+
+needs pre and post processing

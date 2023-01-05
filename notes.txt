@@ -1,0 +1,15 @@
+
+
+docker build -t my-openai-container .
+
+docker run -it --device /dev/snd:/dev/snd my-openai-container
+
+##build commands with mic
+docker build -t openai-model .
+docker run --device /dev/snd --user $(id -u):$(id -g) my-openai-container:latest
+
+
+# Install dependencies
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+

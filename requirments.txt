@@ -1,0 +1,6 @@
+pyaudio
+openai
+tqdm
+requests
+regex
+

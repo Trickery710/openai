@@ -1,0 +1,15 @@
+FROM python:3.8-slim
+
+
+# Install build tools and pyaudio dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libasound-dev \
+    portaudio19-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install pyaudio using pip
+RUN pip install pyaudio
+
+# Run your command or application
+CMD ["python", "-c", "import pyaudio; print(pyaudio.__version__)"]

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set the API key
-api_key="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"
+YOUR_KEY="Authorization: Bearer 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"
 
 # Set the model for code completion
 model="davinci"
@@ -18,7 +18,7 @@ get_completions() {
   local prompt=$1
   local model=$2
   local response
-  response=$(curl -X POST -H "Content-Type: application/json" -d "{\"prompt\": \"$prompt\", \"model\": \"$model\", \"max_tokens\": 1024, \"n\": 1, \"stop\": null, \"temperature\": 0.5}" "https://api.openai.com/v1/completions?api_key=$api_key")
+  response=$(curl -X POST -H "Content-Type: application/json" -d "{\"prompt\": \"$prompt\", \"model\": \"$model\", \"max_tokens\": 1024, \"n\": 1, \"stop\": null, \"temperature\": 0.5}" "https://api.openai.com/v1/completions?api_key=$YOUR_KEY")
   local completions=$(echo "$response" | jq -r '.choices[].text')
   echo "$completions"
 }

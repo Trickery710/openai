@@ -1,9 +1,16 @@
 import openai
 import requests
-import json
+from PIL import Image
+from io import BytesIO
 
-openai.api_key = "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"
+YOUR_KEY="Authorization: Bearer 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"
 
+# Read the API key from the api_key.txt file
+with open("api_key.txt", "r") as f:
+    api_key = f.read().strip()
+
+# Set the API key
+openai.api_key = api_key
 
 def generate_image(prompt):
   model_engine = "image-alpha-001"
@@ -19,6 +26,13 @@ def generate_image(prompt):
 
   return completions.data[0].url
 
-prompt = "Generate an image of a cat sitting on a couch."
+# Get the image prompt from the user
+prompt = input("Enter a description of the image that you want to generate: ")
+
+# Generate the image
 image_url = generate_image(prompt)
-print(image_url)
+
+# Download the image and display it
+response = requests.get(image_url)
+img = Image.open(BytesIO(response.content))
+img.show()

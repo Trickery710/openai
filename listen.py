@@ -1,7 +1,7 @@
 import openai
 import pyaudio
 import wave
-openai.api_key = "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"" | docker secret create my_secret_data -
+openai.api_key = "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"
 
 def listen_to_mic():
     # Set up the pyaudio stream

@@ -13,3 +13,11 @@ docker run --device /dev/snd --user $(id -u):$(id -g) my-openai-container:latest
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
+#read apikey from file
+with open("api_key.txt", "r") as f:
+    api_key = f.read().strip()
+
+
+with open("api_key.txt", "r") as f:
+    api_key = f.read().strip()
+openai.api_key = api_key

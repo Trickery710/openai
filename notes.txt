@@ -21,3 +21,8 @@ with open("api_key.txt", "r") as f:
 with open("api_key.txt", "r") as f:
     api_key = f.read().strip()
 openai.api_key = api_key
+
+curl https://api.openai.com/v1/completions \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer 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" \
+-d '{"model": "text-davinci-003", "prompt": "Say this is a test", "temperature": 0, "max_tokens": 7}'

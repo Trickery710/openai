@@ -4,9 +4,9 @@ import requests
 url = "https://api.openai.com/v1/images/generations"
 
 # Set the API key
-YOUR_KEY="Authorization: Bearer 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"# Set the headers
+#YOUR_KEY="Authorization: Bearer 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"# Set the headers
 headers = {
-    "Authorization": "Bearer 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",
+    "Authorization": "Bearer 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",
     "Content-Type": "application/json",
 }
 

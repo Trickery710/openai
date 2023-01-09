@@ -1,6 +1,6 @@
 import openai
 ##shouldn't hurt
-openai.api_key="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"
+openai.api_key="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"
 while True:
     user_input = input("Enter your code: ")
     completions = openai.Completion.create(

@@ -1,7 +1,9 @@
 import os
 import openai
 
-YOUR_KEY="Authorization: Bearer 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"
+# Read the API key from the api_key.txt file
+with open(".key", "r") as f:
+    api_key = f.read().strip()
 
 response = openai.Completion.create(
   model="code-davinci-002",

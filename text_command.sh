@@ -1,6 +1,6 @@
 #!/bin/bash
 user_input=($1)
-api_key="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"
+api_key="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"
 curl https://api.openai.com/v1/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer $api_key" \

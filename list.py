@@ -1,7 +1,9 @@
 import os
+
 import openai
 
-openai.api_key = os.getenv("OPENAI_API_KEY")
+YOUR_KEY="Authorization: Bearer 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"# Set the headers
+
 
 response = openai.Completion.create(
   model="code-davinci-002",

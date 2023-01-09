@@ -1,3 +1,80 @@
 .key
 "*.(sh,py)"
 ".*"
+"*.txt"
+
+**/*.hist
+**/*.key
+!.dockerignore 
+
+
+# ignore all .a files
+#*.a
+
+# except for lib.a, which we want to track
+#!lib.a
+
+# ignore all .o files in the current directory and below
+#**/*.o
+
+# ignore all .pyc files in the subdirectory "dir1"
+#dir1/**/*.pyc
+
+# ignore docs/_build/html directory
+#docs/_build/html
+
+# Ignore everything in the root folder
+/*
+
+# Except this gitignore file
+!.gitignore
+
+# Ignore all log files and databases
+*.log
+*.sql
+*.sqlite
+
+# Ignore compiled source code
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Ignore packaged distributables
+*.7z
+*.dmg
+*.gz
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Ignore configuration files
+*.ini
+*.conf
+*.cfg
+*.env
+
+# Ignore certificates and private keys
+*.key
+*.pem
+*.pfx
+
+# Ignore any editor-specific files
+*.sublime-project
+*.sublime-workspace
+*.swp
+.project
+.DS_Store
+.idea
+
+# Ignore operating system files
+.DS_Store
+Thumbs.db
+
+# Ignore IDEs and other software
+bin/
+obj/
+.vscode/
